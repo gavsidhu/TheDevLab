@@ -3,9 +3,9 @@ import path from 'path';
 import matter from 'gray-matter';
 import { promisify } from 'util';
 import glob from 'fast-glob';
+import { contentDirectory } from '../../config';
 
 const readFile = promisify(fs.readFile);
-const contentDirectory = path.join(process.cwd(), 'content');
 
 export async function getMdxContent() {
   const filePaths = await glob('**/*.mdx', { cwd: contentDirectory });
