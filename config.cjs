@@ -1,5 +1,6 @@
-const isProd = process.env.NODE_ENV === 'production';
+const path = require('path');
 
-module.exports = {
-    contentDirectory: isProd ? '/vercel/path0/content' : 'content',
-};
+const isProd = process.env.NODE_ENV === 'production';
+const projectRoot = process.cwd();
+
+module.exports.contentDirectory = isProd ? path.join(projectRoot, 'content') : 'content';
