@@ -35,6 +35,7 @@ const index = ({ organisms }: Props) => {
           <div className='grid grid-cols-4 gap-8 py-20'>
             {organisms.map((organism) => (
               <Card
+                key={organism.frontMatter.title}
                 title={organism.frontMatter.title}
                 description={organism.frontMatter.description}
                 href={organism.slug}

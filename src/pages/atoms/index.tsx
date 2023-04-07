@@ -33,6 +33,7 @@ const index = ({ atoms }: Props) => {
                     <div className='grid grid-cols-4 gap-8 py-20'>
                         {atoms.map((atom) => (
                             <Card
+                                key={atom.frontMatter.title}
                                 title={atom.frontMatter.title}
                                 description={atom.frontMatter.description}
                                 href={atom.slug}
