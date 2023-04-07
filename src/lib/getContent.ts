@@ -29,6 +29,11 @@ export async function getMdxContent() {
 
 export async function getAllContent(directory: string) {
   const fullPath = path.join(contentDirectory, directory);
+
+  if (!fs.existsSync(fullPath)) {
+    console.warn(`Directory "${fullPath}" does not exist or is empty.`);
+    return [];
+  }
   const filenames = fs.readdirSync(fullPath);
   const contentData = filenames.map((filename) => {
     const filePath = path.join(fullPath, filename, 'index.mdx');
