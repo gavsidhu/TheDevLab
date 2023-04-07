@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { promisify } from 'util';
 import glob from 'fast-glob';
-import { contentDirectory } from '../../config';
+import { contentDirectory } from '../../config.cjs';
 
 const readFile = promisify(fs.readFile);
 
