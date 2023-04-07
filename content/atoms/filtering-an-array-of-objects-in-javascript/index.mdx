@@ -1,0 +1,83 @@
+---
+title: 'Filtering an Array of Objects in JavaScript'
+description: 'Learn how to filter an array of objects in JavaScript using a simple and efficient code snippet.'
+image: '/api/images?folder=atoms&filename=filtering-an-array-of-objects-in-javascript.png&post=filtering-an-array-of-objects-in-javascript'
+published: '2023-04-07'
+modified: '2023-04-07'
+author: 'Gavin Sidhu'
+slug: 'filtering-an-array-of-objects-in-javascript'
+tags:
+  - javascript
+---
+
+# Filtering an Array of Objects in JavaScript
+
+<img
+  src='/api/images?folder=atoms&filename=filtering-an-array-of-objects-in-javascript.png&post=filtering-an-array-of-objects-in-javascript'
+  alt='Filtering arrays'
+/>
+
+One of the most common tasks in JavaScript is manipulating and filtering arrays. When working with arrays of objects, filtering becomes even more important, because it allows us to
+efficiently find and display data based on certain conditions.
+
+Imagine you're working on a project that displays a list of products on an e-commerce website. You want to build a feature that filters the products based on their category,
+allowing shoppers to find items they're interested in.
+
+Here's what your products data may like:
+
+```javascript:productsData.js
+const products = [
+  { id: 1, name: 'Laptop', category: 'Electronics' },
+  { id: 2, name: 'Shoes', category: 'Fashion' },
+  { id: 3, name: 'Headphones', category: 'Electronics' },
+  { id: 4, name: 'T-shirt', category: 'Fashion' },
+];
+```
+
+Let's say that a shopper wants to view all the electronics.
+
+Here's how you can implement that:
+
+```javascript:index.json
+const products = [
+  { id: 1, name: "Laptop", category: "Electronics" },
+  { id: 2, name: "Shoes", category: "Fashion" },
+  { id: 3, name: "Headphones", category: "Electronics" },
+  { id: 4, name: "T-shirt", category: "Fashion" }
+];
+
+function filterProductsByCategory(products, category) {
+  return products.filter(product => product.category === category);
+}
+
+const filteredProducts = filterProductsByCategory(products, "Electronics");
+console.log(filteredProducts);
+```
+
+After you run the code, `filteredProducts` variable will contain a new array with only the products that belong to the "Electronics" category.
+
+Here's what `filteredProducts` looks like:
+
+```javascript
+[
+  { id: 1, name: 'Laptop', category: 'Electronics' },
+  { id: 3, name: 'Headphones', category: 'Electronics' },
+];
+```
+
+## Explanation:
+
+In the code, we have an array of objects called products, with each object representing a product with an id, name, and category. Our goal is to create a new array
+containing only the products that belong to a specific category ("Electronics").
+
+To accomplish this, we define a function called filterProductsByCategory, which takes two arguments: the array of products and the desired category.
+
+Inside the function, we use the Array.prototype.filter() method to create a new array with only the products that match the specified category.
+
+The `filter()` method takes a callback function as an argument, which is called for each element in the array.
+
+If the callback function returns true, the element is included in the new array. In our case, the callback function is an arrow function that checks if the category
+property of each product object matches the provided category argument ("Electronics").
+
+Applying this code to our e-commerce website scenario, we can quickly filter the list of products to show only those in the desired category. This helps enhance the user's experience and
+helps customers find the items they're looking for with ease.
