@@ -8,7 +8,11 @@ import Seo from '@/components/Seo'
 export default function Home() {
   return (
     <>
-      <Seo />
+      <Seo
+        description='Learn, experiment and innovate with new technology.'
+        title='The Dev Lab'
+        templateTitle='Learn, Experiment, Innovate'
+      />
       <Navbar />
       <main className='max-w-7xl mx-auto'>
         <Hero />
