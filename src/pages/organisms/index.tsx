@@ -32,7 +32,7 @@ const index = ({ organisms }: Props) => {
               complete applications.
             </p>
           </div>
-          <div className='grid grid-cols-4 gap-8 py-20'>
+          <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>
             {organisms.map((organism) => (
               <Card
                 key={organism.frontMatter.title}

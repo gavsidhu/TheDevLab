@@ -31,7 +31,7 @@ const index = ({ molecules }: Props) => {
                             knowledge and learn how to apply key concepts through these concise guides.
                         </p>
                     </div>
-                    <div className='grid grid-cols-4 gap-8 py-20'>
+                    <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>
                         {molecules.map((molecule) => (
                             <Card
                                 key={molecule.frontMatter.title}

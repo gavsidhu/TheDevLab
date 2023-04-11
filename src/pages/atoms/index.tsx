@@ -30,7 +30,7 @@ const index = ({ atoms }: Props) => {
                             knowledge help you quickly understand and implement fundamental elements across various programming languages.
                         </p>
                     </div>
-                    <div className='grid grid-cols-4 gap-8 py-20'>
+                    <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>
                         {atoms.map((atom) => (
                             <Card
                                 key={atom.frontMatter.title}
