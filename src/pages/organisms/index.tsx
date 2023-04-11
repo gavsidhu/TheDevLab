@@ -27,9 +27,8 @@ const index = ({ organisms }: Props) => {
               Organisms
             </h1>
             <p className='mt-6 leading-8 text-gray-300'>
-              Tutorials that delve into more complex programming topics, integrations, and features.
-              These detailed guides provide in-depth explanations and practical examples, helping you bridge the gap between basic concepts and
-              complete applications.
+              Comprehensive, in-depth tutorials that guide you through the process of building complete projects and applications from start to finish.
+              Learn how to create, deploy, and optimize real-world applications by following these detailed walkthroughs.
             </p>
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>

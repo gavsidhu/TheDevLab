@@ -27,8 +27,8 @@ const index = ({ molecules }: Props) => {
                             Molecules
                         </h1>
                         <p className='mt-6 leading-8 text-gray-300'>
-                            Brief tutorials that cover foundational aspects of programming, libraries, frameworks, and tools. Gain practical
-                            knowledge and learn how to apply key concepts through these concise guides.
+                            Intermediate-level tutorials that delve into more complex programming topics, integrations, and features.
+                            These detailed guides provide in-depth explanations and practical examples, helping you bridge the gap between basic concepts and complete applications.
                         </p>
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>

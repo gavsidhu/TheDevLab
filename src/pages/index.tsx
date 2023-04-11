@@ -21,21 +21,21 @@ export default function Home() {
             imageUrl="/images/home/atom.png"
             alt='alt'
             title='Atoms'
-            description='Small, focused code snippets that address specific programming tasks, syntax, or concepts. '
+            description='Brief tutorials that cover foundational aspects of programming, libraries, frameworks, and tools.'
             href="/atoms"
           />
           <Card
             imageUrl="/images/home/molecules.png"
             alt='alt'
             title='Molecules'
-            description='Brief tutorials that cover foundational aspects of programming, libraries, frameworks, and tools.'
+            description='Tutorials that delve into more complex programming topics, integrations, and features.'
             href="/molecules"
           />
           <Card
             imageUrl="/images/home/organisms.png"
             alt='alt'
             title='Organisms'
-            description='Tutorials that delve into more complex programming topics, integrations, and features.'
+            description='In-depth tutorials that guide you through the process of building complete projects and applications from start to finish.'
             href="/organisms"
           />
         </div>

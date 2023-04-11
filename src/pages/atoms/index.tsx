@@ -26,8 +26,8 @@ const index = ({ atoms }: Props) => {
                             Atoms
                         </h1>
                         <p className='mt-6 leading-8 text-gray-300'>
-                            Small, focused code snippets that address specific programming tasks, syntax, or concepts. These bite-sized pieces of
-                            knowledge help you quickly understand and implement fundamental elements across various programming languages.
+                            Brief tutorials that cover foundational aspects of programming, libraries, frameworks, and tools. Gain practical
+                            knowledge and learn how to apply key concepts through these concise guides.
                         </p>
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8 py-20'>
