@@ -19,13 +19,14 @@ interface PostData extends SEOData {
 
 interface PostProps {
     source: MDXRemoteSerializeResult;
+    headings: Array<{ text: string; link: string; level: number }>;
     post: PostData
 }
 
-const Atom = ({ source, post }: PostProps) => {
+const Atom = ({ source, post, headings }: PostProps) => {
     return (
         <>
-            <AtomLayout source={source} post={post} />
+            <AtomLayout source={source} post={post} headings={headings} />
         </>
     )
 }
@@ -59,6 +60,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const mdxSource = await readFile(post.fullPath, 'utf8');
     const { content } = matter(mdxSource); // Extract the content without front matter
 
+    const getHeadings = (content: string) => {
+        const regex = /^## (.*)$/gm;
+        const headings: Array<{ text: string; link: string }> = [];
+
+        let match;
+        while ((match = regex.exec(content)) !== null) {
+            const headingText = match[1];
+            const link = '#' + headingText.replace(/ /g, '_').toLowerCase();
+            headings.push({ text: headingText, link });
+        }
+
+        return headings;
+    };
+
+    const headings = getHeadings(content);
+
     const source = await serialize(content, {
         mdxOptions: {
             rehypePlugins: [
@@ -68,7 +85,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         }
     }); // Serialize the content without front matter
 
-    return { props: { source, post } };
+    return { props: { source, headings, post } };
 };
 
 export default Atom
