@@ -3,9 +3,12 @@ import Hero from '@/components/home/Hero'
 import Card from '@/components/Card'
 import Footer from '@/components/layout/Footer'
 import Seo from '@/components/Seo'
+import path from 'path'
 
 
 export default function Home() {
+  const imagePath = path.join(process.cwd(), 'content')
+  console.log("content folder: ", imagePath)
   return (
     <>
       <Seo
