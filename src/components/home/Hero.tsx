@@ -1,6 +1,24 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 
 const Hero = () => {
+    const [email, setEmail] = useState("")
+
+    const onChange = (e: React.FormEvent<HTMLInputElement>) => {
+        e.preventDefault()
+        setEmail(e.currentTarget.value)
+    }
+
+    const handleClick = async () => {
+        const data = {
+            "contacts": [
+              {
+                "email": email,
+              }
+            ]
+          };
+        await axios.post("/api/contacts", data)
+    }
     return (
         <div>
             <div className="relative isolate overflow-hidden bg-inherit">
@@ -22,11 +40,13 @@ const Hero = () => {
                                 type="email"
                                 autoComplete="email"
                                 required
+                                onChange={onChange}
                                 className="min-w-0 flex-auto rounded-md border border-white bg-transparent px-3.5 py-2 text-white shadow-sm focus:outline-none sm:text-sm sm:leading-6"
                                 placeholder="Email address"
                             />
                             <button
                                 type="submit"
+                                onClick={handleClick}
                                 className="flex-none rounded-md bg-[#C2F7B0] py-2.5 px-3.5 font-semibold text-[#0C1E3E] shadow-sm hover:bg-[#A5D5A5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                             >
                                 Join Free
