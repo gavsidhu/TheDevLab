@@ -7,6 +7,7 @@ import Footer from '../layout/Footer'
 import Seo from '../Seo'
 import { SEOData } from '@/types/global'
 import TableOfContents from '../layout/TableOfContents'
+import url from '@/lib/url'
 
 interface PostData extends SEOData {
     fullPath: string
@@ -25,7 +26,7 @@ const AtomLayout = ({ source, headings, post }: AtomProps) => {
                 title={post.title}
                 description={post.description}
                 date={post.published}
-                image={post.image}
+                image={url + post.image}
                 templateTitle={post.title}
             />
             <Navbar />

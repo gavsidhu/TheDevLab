@@ -7,6 +7,7 @@ import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import Seo from '../Seo';
 import { SEOData } from '@/types/global';
+import url from '@/lib/url';
 
 interface PostData extends SEOData {
     fullPath: string
@@ -26,7 +27,7 @@ const MoleculeLayout = ({ source, headings, post }: MoleculeProps) => {
                 title={post.title}
                 description={post.description}
                 date={post.published}
-                image={post.image}
+                image={url + post.image}
                 templateTitle={post.title}
             />
             <Navbar />
